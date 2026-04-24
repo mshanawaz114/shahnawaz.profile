@@ -10,6 +10,11 @@ public interface IContentProvider
     string GetProjectsRaw();
 }
 
+/// <summary>
+/// Loads the structured résumé and project JSON files used to seed the LLM system prompt.
+/// In Azure Functions isolated worker the published artifacts (Data/*.json) sit next to
+/// the assembly, so paths resolve via AppContext.BaseDirectory rather than IWebHostEnvironment.
+/// </summary>
 public class ContentProvider : IContentProvider
 {
     private readonly Lazy<string> _resumeRaw;
@@ -17,9 +22,9 @@ public class ContentProvider : IContentProvider
     private readonly Lazy<JsonDocument> _resumeDoc;
     private readonly Lazy<JsonDocument> _projectsDoc;
 
-    public ContentProvider(IWebHostEnvironment env)
+    public ContentProvider()
     {
-        var dataDir = Path.Combine(env.ContentRootPath, "Data");
+        var dataDir = Path.Combine(AppContext.BaseDirectory, "Data");
 
         _resumeRaw = new Lazy<string>(() => File.ReadAllText(Path.Combine(dataDir, "resume.json")));
         _projectsRaw = new Lazy<string>(() => File.ReadAllText(Path.Combine(dataDir, "projects.json")));

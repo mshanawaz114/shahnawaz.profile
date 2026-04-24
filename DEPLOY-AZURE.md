@@ -1,8 +1,10 @@
 # Deploying to Azure Static Web Apps (Free Tier)
 
-This app is designed to run on **Azure Static Web Apps** with the client (Angular) served from CDN and the .NET API attached as a **linked managed API**. Both halves ship together from a single GitHub Actions workflow and share one origin, so the browser never makes cross-origin calls.
+This app runs on **Azure Static Web Apps** with the client (Angular 21) served from CDN and the chat backend (.NET 8 Azure Functions) attached as a **linked managed API**. Both halves ship together from a single GitHub Actions workflow and share one origin, so the browser never makes cross-origin calls.
 
 **Monthly cost on the Free tier: $0**, with 100 GB bandwidth, 2 custom domains, and free managed TLS.
+
+> **Why Azure Functions, not ASP.NET Core Web API?** SWA's managed API runtime only accepts Azure Functions. A regular Web API project would deploy but every `/api/*` request would return HTTP 405 because the Functions runtime can't find a matching function. The chat API is structured as an isolated-worker .NET 8 Functions project for that reason.
 
 ---
 
@@ -28,7 +30,7 @@ This app is designed to run on **Azure Static Web Apps** with the client (Angula
    - Repository — `shahnawaz.profile`
    - Branch — `main`
 4. **Build details:**
-   - Build preset — **Custom**.
+   - Build preset — **Angular** (auto-detected) or **Custom** — both fine.
    - App location — `client`
    - API location — `api/publish`
    - Output location — `dist/client/browser`
@@ -36,23 +38,28 @@ This app is designed to run on **Azure Static Web Apps** with the client (Angula
 
 Azure will:
 - Provision the Static Web App resource.
-- Commit a generated GitHub Actions workflow to your repo (you can ignore this — we already committed a better one under `.github/workflows/azure-static-web-apps.yml`).
-- Add a `AZURE_STATIC_WEB_APPS_API_TOKEN` secret to your repo.
+- Commit a generated GitHub Actions workflow to your repo at `.github/workflows/azure-static-web-apps-<random>.yml`.
+- Add an `AZURE_STATIC_WEB_APPS_API_TOKEN_<RANDOM>` secret to your repo.
 
-If Azure committed its own workflow file, **delete it** so only our workflow runs. Our workflow already matches the Azure-required shape and handles both the Angular build and the `dotnet publish` step.
+The committed workflow file in this repo has been **modified** from Azure's default to add a `dotnet publish` step before the SWA deploy. If you re-create the SWA resource (and Azure regenerates the workflow), copy the `dotnet publish` step back in — see the existing file for reference.
 
 ---
 
 ## 3. Add the Groq API key
 
-1. Open your new Static Web App in the portal.
-2. Left nav → **Settings → Configuration**.
+1. Open your Static Web App in the portal.
+2. Left nav → **Settings → Environment variables**.
 3. Click **+ Add** and create:
    - Name: `GROQ_API_KEY`
    - Value: `gsk_...` (your Groq key)
 4. Save.
 
-The .NET API picks this up automatically via `Environment.GetEnvironmentVariable("GROQ_API_KEY")` (see `api/Services/GroqChatService.cs`).
+The Functions worker picks this up via `IConfiguration["GROQ_API_KEY"]` (which reads env vars in Azure Functions hosts) — see `api/Services/GroqChatService.cs`.
+
+You can optionally override defaults too:
+- `Groq__Model` — defaults to `llama-3.3-70b-versatile` (note the **double underscore** — that's how .NET maps env vars to nested config keys)
+- `Groq__Temperature` — defaults to `0.4`
+- `Groq__MaxTokens` — defaults to `800`
 
 ---
 
@@ -60,12 +67,13 @@ The .NET API picks this up automatically via `Environment.GetEnvironmentVariable
 
 Push any change to `main`, or re-run the workflow from the **Actions** tab on GitHub. The run will:
 
-1. Install Node 20 and .NET 10.
-2. Build the Angular client (`npm ci` + `ng build --configuration production`).
-3. Publish the .NET API (`dotnet publish -c Release -o ./publish`).
-4. Deploy both to Azure Static Web Apps.
+1. Install .NET 8 SDK.
+2. Publish the .NET 8 Functions API (`dotnet publish -c Release -o ./publish`).
+3. Hand the published artifacts + Angular source to SWA's Oryx builder.
+4. Oryx runs `npm ci && npm run build` for the Angular client.
+5. SWA uploads the static client + Functions bundle to the global edge.
 
-When green, Azure will show the URL under **Overview → URL**, e.g. `https://ambitious-stone-0123456.azurestaticapps.net`.
+When green, Azure will show the URL under **Overview → URL**, e.g. `https://kind-sand-054c25910.7.azurestaticapps.net`.
 
 ---
 
@@ -83,21 +91,21 @@ When green, Azure will show the URL under **Overview → URL**, e.g. `https://am
 Once deployed:
 
 - `https://<your-swa>/` → Angular portfolio.
-- `https://<your-swa>/api/health` → `{ "status": "ok", "runtime": ".NET 10" }`.
-- `https://<your-swa>/api/resume` → résumé JSON.
-- `https://<your-swa>/api/projects` → case-study JSON.
+- `https://<your-swa>/api/health` → `{ "status": "ok", "runtime": ".NET 8 isolated (Azure Functions on Static Web Apps managed API)" }`.
 - Click the chat launcher → send a message → should get a Groq-powered reply.
 
-If the chat returns "chat service is not configured", the `GROQ_API_KEY` app setting is missing or incorrectly named. Re-check step 3.
+If the chat returns "chat service is not configured", the `GROQ_API_KEY` env var is missing or incorrectly named. Re-check step 3.
+
+If the chat returns HTTP 405, the Functions API didn't deploy — check the workflow log for a successful `dotnet publish` step and confirm `api_location: api/publish` + `skip_api_build: true`.
 
 ---
 
 ## 7. Day-2 operations
 
-- **Logs** — Static Web Apps → *Monitoring → Log stream* for API logs.
-- **Rotate Groq key** — update the `GROQ_API_KEY` app setting; no redeploy needed.
+- **Logs** — Static Web Apps → *Monitoring → Log stream* for Functions logs.
+- **Rotate Groq key** — update the `GROQ_API_KEY` env var; no redeploy needed.
 - **Environment slots** — PR previews are automatic; the workflow closes them on merge.
-- **Downgrade path** — if .NET 10 preview in SWA misbehaves, change `staticwebapp.config.json` to `"apiRuntime": "dotnet:8.0"` and update `api/api.csproj` `<TargetFramework>` to `net8.0`.
+- **Bumping the Functions runtime** — when SWA managed API supports a newer runtime, update `api/api.csproj` `<TargetFramework>` and the workflow's `actions/setup-dotnet` `dotnet-version`.
 
 ---
 
@@ -105,8 +113,10 @@ If the chat returns "chat service is not configured", the `GROQ_API_KEY` app set
 
 | Symptom | Fix |
 |---|---|
+| Chat returns HTTP 405 | The Functions API didn't deploy. Confirm `dotnet publish` ran and `api_location: api/publish` + `skip_api_build: true` are set in the workflow. |
+| Chat returns HTTP 500 with "chat service is not configured" | `GROQ_API_KEY` env var missing or misspelled in SWA → Settings → Environment variables. |
+| Chat returns HTTP 502 | Groq upstream rejected the request — check the API logs in **Monitoring → Log stream** for the Groq response. Most likely: deprecated model name (override `Groq__Model`) or invalid API key. |
+| Workflow fails at `dotnet publish` | Local sanity check: `cd api && dotnet publish -c Release` should succeed against .NET 8 SDK. |
 | Workflow fails at `npm ci` | Commit `client/package-lock.json` (generated by first `npm install`) to the repo. |
-| 404 on `/api/*` | Linked API isn't deployed — re-check the workflow's `api_location`. |
-| 500 on chat, others fine | `GROQ_API_KEY` missing in SWA Configuration. |
-| PDF asset not served | Make sure `client/public/resume.pdf` is committed. |
 | Angular routes 404 on refresh | `staticwebapp.config.json` has `navigationFallback` already — ensure it's at repo root and committed. |
+| Two workflows running and racing | Delete any extras under `.github/workflows/`. Keep only the one whose secret name matches the `AZURE_STATIC_WEB_APPS_API_TOKEN_*` secret in your GitHub repo settings. |

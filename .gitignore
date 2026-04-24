@@ -24,6 +24,8 @@ yarn-error.log*
 .env.*.local
 appsettings.Local.json
 **/appsettings.*.Local.json
+# Azure Functions local-only settings (holds GROQ_API_KEY for local dev)
+api/local.settings.json
 
 # OS
 .DS_Store

@@ -1,52 +1,33 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using ShahnawazProfile.Api.Services;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Controllers + JSON
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-
-// CORS — permissive for local dev and for Azure SWA where client + linked API share origin.
-// In production on Azure Static Web Apps with a linked API, calls are same-origin via /api/* proxy.
-const string CorsPolicy = "PortfolioCors";
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(CorsPolicy, policy =>
+// Azure Functions isolated worker host. SWA's managed API requires Functions
+// (not ASP.NET Core Web API), so the chat endpoint is exposed as an HTTP-triggered
+// function in Functions/ChatFunction.cs and resolved by the SWA routing layer at /api/chat.
+var host = new HostBuilder()
+    .ConfigureFunctionsWebApplication()
+    .ConfigureAppConfiguration(config =>
     {
-        var origins = builder.Configuration
-            .GetSection("Cors:AllowedOrigins")
-            .Get<string[]>() ?? Array.Empty<string>();
-
-        if (origins.Length == 0)
+        // Load appsettings.json from the published output so Groq:Model / Temperature etc.
+        // behave the same as in the Web API project we replaced.
+        config.SetBasePath(AppContext.BaseDirectory)
+              .AddJsonFile("appsettings.json", optional: true)
+              .AddEnvironmentVariables();
+    })
+    .ConfigureServices((context, services) =>
+    {
+        // Typed HttpClient for Groq REST API. Same configuration as the prior Web API.
+        services.AddHttpClient<IGroqChatService, GroqChatService>(client =>
         {
-            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-        }
-        else
-        {
-            policy.WithOrigins(origins)
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-        }
-    });
-});
+            client.BaseAddress = new Uri("https://api.groq.com/");
+            client.Timeout = TimeSpan.FromSeconds(30);
+        });
 
-// Groq chat service — typed HttpClient
-builder.Services.AddHttpClient<IGroqChatService, GroqChatService>(client =>
-{
-    client.BaseAddress = new Uri("https://api.groq.com/");
-    client.Timeout = TimeSpan.FromSeconds(30);
-});
+        services.AddSingleton<IPromptBuilder, PromptBuilder>();
+        services.AddSingleton<IContentProvider, ContentProvider>();
+    })
+    .Build();
 
-// Prompt builder + content provider
-builder.Services.AddSingleton<IPromptBuilder, PromptBuilder>();
-builder.Services.AddSingleton<IContentProvider, ContentProvider>();
-
-var app = builder.Build();
-
-app.UseCors(CorsPolicy);
-app.MapControllers();
-
-// Simple health endpoint
-app.MapGet("/api/health", () => Results.Ok(new { status = "ok", runtime = ".NET 10" }));
-
-app.Run();
+host.Run();

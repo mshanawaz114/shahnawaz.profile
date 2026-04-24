@@ -2,12 +2,10 @@ name: Azure Static Web Apps CI/CD
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build_and_deploy_job:
@@ -15,23 +13,37 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
           lfs: false
+
+      # The chat function is a .NET 8 isolated-worker Azure Functions project.
+      # We publish it explicitly here and hand SWA the published artifacts so
+      # SWA's Oryx builder doesn't try (and fail) to detect / re-build it.
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Publish .NET Functions API
+        working-directory: api
+        run: dotnet publish -c Release -o ./publish
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_SAND_054C25910 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "client" # App source code path
-          api_location: "api/publish" # Api source code path - optional
-          output_location: "dist/client/browser" # Built app content directory - optional
-          ###### End of Repository/Build Configurations ######
+          # Angular client — SWA's Oryx builder runs `npm ci && npm run build` here.
+          # angular.json copies api/Data/*.json into dist/client/browser/data/ at build time.
+          app_location: "client"
+          output_location: "dist/client/browser"
+          # Pre-published Functions output. skip_api_build prevents Oryx from rebuilding.
+          api_location: "api/publish"
+          skip_api_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

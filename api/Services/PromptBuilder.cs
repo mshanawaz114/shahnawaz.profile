@@ -1,5 +1,4 @@
 using System.Text;
-using System.Text.Json;
 
 namespace ShahnawazProfile.Api.Services;
 
@@ -22,9 +21,6 @@ public class PromptBuilder : IPromptBuilder
     {
         if (_cached is not null) return _cached;
 
-        var resume = _content.GetResume();
-        var projects = _content.GetProjects();
-
         var sb = new StringBuilder();
         sb.AppendLine("You are the résumé assistant for Shahnawaz Mohammed — a Senior .NET Engineer and Solutions Architect.");
         sb.AppendLine("Answer questions from recruiters, hiring managers, and fellow engineers using ONLY the structured résumé and case-study data provided below.");
@@ -36,10 +32,10 @@ public class PromptBuilder : IPromptBuilder
         sb.AppendLine("- Keep replies under 180 words unless the user explicitly asks for depth.");
         sb.AppendLine();
         sb.AppendLine("=== RESUME (JSON) ===");
-        sb.AppendLine(JsonSerializer.Serialize(resume));
+        sb.AppendLine(_content.GetResumeRaw());
         sb.AppendLine();
         sb.AppendLine("=== PROJECTS (JSON) ===");
-        sb.AppendLine(JsonSerializer.Serialize(projects));
+        sb.AppendLine(_content.GetProjectsRaw());
 
         _cached = sb.ToString();
         return _cached;

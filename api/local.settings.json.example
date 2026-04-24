@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "GROQ_API_KEY": "",
+    "Groq__Model": "llama-3.3-70b-versatile",
+    "Groq__Temperature": "0.4",
+    "Groq__MaxTokens": "800"
+  },
+  "Host": {
+    "CORS": "*"
+  }
+}
