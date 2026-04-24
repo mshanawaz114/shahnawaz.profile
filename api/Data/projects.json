@@ -1,0 +1,91 @@
+[
+  {
+    "slug": "eppe-medicaid",
+    "name": "Enterprise Privacy Policy Engine (EPPE)",
+    "client": "Federal Center for Medicaid & Medicare",
+    "headline": "High-traffic ASP.NET Core 8 + Angular 18 portal managing Medicaid privacy policy workflows for the federal government.",
+    "problem": "EPPE needed a secure, compliant, custom workflow engine for Data Use Agreement (DUA) policies — with role-based approvals, media-dispositioning, and automated notifications — built on ASP.NET Core 8, Entity Framework Core, and an Angular 18 SPA, with zero-downtime deployments to a Kubernetes cluster.",
+    "impact": [
+      "Redesigned global features — QuestPDF generation, advanced server-side search and filtering, and Hangfire-scheduled DUA-policy notifications at 15 / 30 / 45 / 60-day intervals.",
+      "Shipped role-based workflow enhancements supporting complex approval hierarchies and fine-grained policy-based authorization.",
+      "Delivered Docker + EKS deployments with GitHub Actions and Jenkins pipelines, achieving zero-downtime release cycles and tag-based releases via Helm."
+    ],
+    "stack": ["ASP.NET Core 8", "C# 12", "Angular 18", "Entity Framework Core", "Docker", "Kubernetes (EKS)", "Jenkins", "GitHub Actions", "AWS (EC2, S3, RDS, Lambda)", "REST APIs"],
+    "tags": ["Government", ".NET", "Cloud", "Security"]
+  },
+  {
+    "slug": "unav-ny-state",
+    "name": "Universal Navigation (UNAV) — NY State Portals",
+    "client": "State of New York — NYDOT",
+    "headline": "Reusable Angular component library for standardized navigation across ~8,000 sub-applications of New York State (DOT, DMV, CSEA, and more).",
+    "problem": "New York's government web ecosystem spanned thousands of sub-applications — many on aging ASP.NET Web Forms — with inconsistent navigation, branding, and accessibility. A single Angular component system, consumable from .NET back-ends and legacy Razor templates, was needed.",
+    "impact": [
+      "Core contributor to an Angular-driven design system rolled out across ~8,000 sub-applications.",
+      "Built reusable Angular components served from a shared CDN and integrated into ASP.NET Core 6 Razor Pages and legacy Web Forms hosts.",
+      "Delivered .NET resource-based localization and Angular i18n + WCAG 2.1 compliance across DOT, DMV, and CSEA portals.",
+      "Mentored 12 .NET developers on ASP.NET Core, EF Core, and Angular component design."
+    ],
+    "stack": ["ASP.NET Core 6", "Angular 12", "AngularJS (legacy bridge)", "Razor Pages", "Entity Framework Core", "Azure App Service", "Azure DevOps", "REST APIs"],
+    "tags": ["Design System", ".NET", "Accessibility", "Government"]
+  },
+  {
+    "slug": "caltrans-modernization",
+    "name": "CALTRANS — .NET & Angular Modernization",
+    "client": "State of California Department of Transportation",
+    "headline": "Full-lifecycle modernization of large-scale ASP.NET portals and Angular front-ends for the California DOT.",
+    "problem": "CALTRANS was running a mix of aging ASP.NET MVC, classic ASP, and AngularJS portals that needed architectural modernization to ASP.NET Core, ADA/WCAG remediation, and a production-support capability for Sev-1 incidents.",
+    "impact": [
+      "Owned full SDLC — requirements, architecture, development, NUnit + Selenium testing, deployment, and 24/7 production support.",
+      "Migrated AngularJS screens to Angular 9 components consuming an ASP.NET Core 5 Web API.",
+      "Delivered ADA/WCAG 2.0 & 2.1 remediation across .NET, Razor, and Angular assets.",
+      "Authored AS-IS / TO-BE technical docs, architecture diagrams, ERDs, and gap analyses; implemented Jenkins + Azure DevOps CI/CD across DEV, QA, UAT, and PROD."
+    ],
+    "stack": ["ASP.NET Core 3.1 / 5", "ASP.NET MVC 5", "C#", "Angular 9", "AngularJS", "React", "GraphQL", "SQL Server", "Jenkins", "Azure DevOps", "AWS"],
+    "tags": ["Government", "Modernization", "Accessibility"]
+  },
+  {
+    "slug": "moodys-microservices",
+    "name": "ASP.NET Core Microservices + Angular Dashboards for CFO Stakeholders",
+    "client": "Moody's Financial",
+    "headline": "Containerized ASP.NET Core 5/6 microservices with RabbitMQ + Kafka messaging, served by Angular 11 SPAs and Blazor Server dashboards.",
+    "problem": "Moody's needed performant, scalable financial summary dashboards backed by a fleet of .NET microservices, with CMS-driven content publishing, identity federation, and accessibility standards across a large portfolio of internal apps.",
+    "impact": [
+      "Delivered Angular 11 SPAs and Blazor Server dashboards consuming ASP.NET Core gRPC + REST microservices.",
+      "Containerized .NET 5 → 6 services with Docker, orchestrated on AKS, and integrated RabbitMQ + Kafka for event-driven workflows.",
+      "Led performance work that reduced API response time ~25% via SQL partitioning, output caching, and Redis-backed query caching.",
+      "Served as Accessibility SME — achieved ADA / WCAG 2.1 compliance across web apps, generated PDFs, and Office documents."
+    ],
+    "stack": ["ASP.NET Core 5 → 6", "C# 9 / 10", "Angular 11", "Blazor Server", "Entity Framework Core", "RabbitMQ", "Kafka", "MongoDB", "SQL Server", "Docker", "AKS", "AWS", "Okta"],
+    "tags": ["Microservices", "Frontend", "Performance"]
+  },
+  {
+    "slug": "nydoccs-modernization",
+    "name": "NYDOCCS — Web Forms → ASP.NET Core 6 + Angular 16 Migration",
+    "client": "State of New York — Department of Corrections",
+    "headline": "Replatformed legacy ASP.NET Web Forms portals to ASP.NET Core 6 with Angular 16 SPAs under Octopus-gated CI/CD.",
+    "problem": "NYDOCCS' web ecosystem included Web Forms portals that had drifted out of support, with limited automated testing and brittle release processes — needing a Clean-Architecture redesign on .NET Core with full Angular front-ends and modern OIDC.",
+    "impact": [
+      "Directed migration of legacy Web Forms components to ASP.NET Core 6 + Angular 16 SPAs with Clean Architecture.",
+      "Stood up xUnit + Moq + Playwright test suites and integrated them into Azure DevOps pipelines.",
+      "Implemented OIDC-based authorization workflows and state/federal compliance controls.",
+      "Owned end-to-end CI/CD on Azure DevOps with Octopus Deploy promotion gates across DEV, QA, UAT, PROD."
+    ],
+    "stack": ["ASP.NET Core 6", "C# 10", "Angular 16", "Entity Framework Core", "xUnit", "Moq", "Playwright", "Azure DevOps", "Octopus Deploy", "SQL Server"],
+    "tags": [".NET", "Government", "Modernization", "DevOps"]
+  },
+  {
+    "slug": "san-bernardino-portals",
+    "name": "San Bernardino — NGINX/PHP → ASP.NET Core on IIS Modernization",
+    "client": "State of California — County of San Bernardino (ITSD)",
+    "headline": "Replatformed multiple county portals (Register-to-Vote, eDocs, Worker Payroll, Affidavit, ROV Intranet) to ASP.NET Core on IIS, with Azure-hosted environments and a brand-new CI/CD foundation.",
+    "problem": "San Bernardino ITSD needed to retire fragile PHP/NGINX-hosted portals and bring them onto a single, supportable ASP.NET Core stack on IIS — with Azure-managed environments, gRPC + REST microservices, and a repeatable CI/CD pipeline that the in-house team could maintain.",
+    "impact": [
+      "Reverse-engineered legacy code into .NET Core 6 and upgraded to .NET 8 LTS with minimal downtime.",
+      "Modularized monoliths into standalone services and Global API-first microservices using gRPC + REST.",
+      "Set up Azure Dev / Test / UAT / Prod environments from scratch with Azure Pipelines, automated NUnit + Playwright testing, and deployment tracking.",
+      "Modernized AngularJS screens to Angular 14+ components served from the new ASP.NET Core hosts."
+    ],
+    "stack": [".NET Core 6 → .NET 8", "C#", "ASP.NET Core MVC", "Angular 14+", "AngularJS (legacy)", "IIS", "SQL Server", "Azure DevOps", "Azure App Service", "Git"],
+    "tags": [".NET", "Government", "Replatform", "Cloud"]
+  }
+]

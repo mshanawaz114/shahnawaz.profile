@@ -1,0 +1,23 @@
+{
+  "platform": {
+    "apiRuntime": "dotnet:10.0"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/api/*", "/*.{css,js,ico,png,jpg,jpeg,svg,webp,pdf,txt,xml,woff2}"]
+  },
+  "mimeTypes": {
+    ".pdf": "application/pdf"
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  },
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"]
+    }
+  ]
+}

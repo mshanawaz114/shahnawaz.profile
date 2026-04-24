@@ -1,0 +1,40 @@
+# .NET
+**/bin/
+**/obj/
+**/publish/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Angular / Node
+client/node_modules/
+client/dist/
+client/.angular/
+client/coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+appsettings.Local.json
+**/appsettings.*.Local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+!client/.vscode/extensions.json
+*.swp
+*.swo
+
+# Claude
+.claude/

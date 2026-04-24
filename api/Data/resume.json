@@ -1,0 +1,470 @@
+{
+  "name": "Shahnawaz Mohammed",
+  "title": "Senior .NET Engineer · Solutions Architect · Azure Specialist",
+  "tagline": "Senior .NET Engineer and Solutions Architect with fourteen years delivering enterprise-grade ASP.NET Core and Angular platforms across federal, state, healthcare, and financial sectors.",
+  "location": "United States (open to remote)",
+  "email": "mshanawaz.net@gmail.com",
+  "phone": "929-261-6383",
+  "social": {
+    "github": "https://github.com/mshanawaz114",
+    "linkedin": "https://www.linkedin.com/in/shahnawaz-mohammed-758b962b1/",
+    "stackoverflow": "https://stackoverflow.com/users/story/mshanawaz114"
+  },
+  "summary": [
+    "Senior .NET Engineer, Solutions Architect, and Tech Lead with 14+ years of hands-on experience designing, developing, architecting, and supporting enterprise-scale .NET applications and Angular front-ends.",
+    "Headline stack — ASP.NET Core 10 / .NET 8 / .NET 6, C# 12, Entity Framework Core, Web API, Worker Services, gRPC, SignalR — paired with Angular 18 (and AngularJS for legacy modernization), TypeScript, and component-driven UI.",
+    "Microservices and event-driven architecture practitioner — RabbitMQ, Apache Kafka, Azure Service Bus, AWS SQS, MassTransit — with polyglot persistence across SQL Server, Oracle, PostgreSQL, MySQL, MongoDB, Cosmos DB, DynamoDB, and Redis.",
+    "Reporting, BI, and analytics depth — SSRS, SSAS, Power BI, Tableau, QlikView, Qlik Sense, SAP Crystal Reports, SAP BusinessObjects, Oracle BI Publisher, Minitab, and ad-hoc reporting frameworks integrated into .NET line-of-business platforms.",
+    "ERP and enterprise-systems integration — SAP, Oracle E-Business Suite, Made2Manage, Aptean, SAGE, Salesforce, Marketo, and ServiceNow connected to .NET via WCF, Web API, gRPC, and message-bus adapters. CMS work on Sitecore, SharePoint, Umbraco, and Kentico.",
+    "Microsoft-certified Azure Solutions Architect Expert and Azure DevOps Engineer Expert. Deep DevOps practice across Azure Pipelines, GitHub Actions, AWS CodePipeline, Docker, Kubernetes (AKS / EKS), Terraform, and ARM/Bicep.",
+    "Strong identity, security, and integration background — OAuth 2.0, OpenID Connect, IdentityServer, JWT/Bearer tokens, Azure AD / Entra ID, role-based authorization, and API gateway patterns.",
+    "Test-engineering rigor — NUnit, xUnit, MSTest, Moq, NSubstitute, SpecFlow, Playwright; consistently achieves 80–90 %+ code coverage on production .NET workloads.",
+    "Served as Software Engineer, Senior .NET Developer, Tech Lead, Solutions Architect, Release Manager, and Project Manager."
+  ],
+  "skills": {
+    ".NET Stack": [
+      "ASP.NET Core 10 / 8 / 6",
+      ".NET Framework 4.8 → 4.0",
+      "C# 12 / C# 4.0 → 12",
+      "VB.NET",
+      "ASP.NET MVC 5 / 4 / 3",
+      "ASP.NET Web Forms",
+      "Web API",
+      "Worker Services",
+      "WPF",
+      "WCF",
+      "WinForms",
+      "Blazor (Server & WASM)",
+      "Razor Pages",
+      "Minimal APIs"
+    ],
+    "Languages": [
+      "C# 12",
+      "TypeScript",
+      "JavaScript (ES2023+)",
+      "VB.NET",
+      "T-SQL",
+      "PL/SQL",
+      "ANSI SQL",
+      "PowerShell",
+      "Python",
+      "Bash",
+      "F#",
+      "XSLT"
+    ],
+    "Frontend": [
+      "Angular 18 (current)",
+      "Angular 7 → 17",
+      "AngularJS (legacy modernization)",
+      "React (Hooks, Redux Toolkit)",
+      "Blazor",
+      "Razor Views",
+      "Bootstrap 5",
+      "Tailwind CSS",
+      "Material UI",
+      "RxJS",
+      "NgRx"
+    ],
+    "Microservices & Messaging": [
+      "RabbitMQ",
+      "Apache Kafka",
+      "Azure Service Bus",
+      "AWS SQS / SNS",
+      "MassTransit",
+      "MediatR",
+      "gRPC",
+      "SignalR",
+      "Event Sourcing",
+      "CQRS"
+    ],
+    "Data & ORM": [
+      "Entity Framework Core",
+      "EF6 / Database First / Code First",
+      "Dapper",
+      "LINQ to SQL",
+      "ADO.NET",
+      "Repository / Unit of Work",
+      "AutoMapper"
+    ],
+    "Relational Databases": [
+      "SQL Server 2008 → 2022",
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "Oracle 11g / 12c / 19c / 21c",
+      "Oracle PL/SQL (packages, procedures, triggers)",
+      "MySQL 5.7 / 8.0",
+      "MariaDB",
+      "PostgreSQL 12 → 16",
+      "IBM DB2",
+      "Database design (normalization, indexing, partitioning)",
+      "Stored procedures, views, CTEs, window functions",
+      "Query tuning & execution-plan analysis"
+    ],
+    "NoSQL & Caching": [
+      "MongoDB / MongoDB Atlas",
+      "Cosmos DB (SQL, Mongo, Cassandra APIs)",
+      "Amazon DynamoDB",
+      "Redis (cache, pub/sub, streams)",
+      "Cassandra",
+      "Couchbase",
+      "Elasticsearch",
+      "Memcached",
+      "Document, key-value, wide-column, graph modeling"
+    ],
+    "Data Warehousing & ETL": [
+      "Amazon Redshift",
+      "Azure Synapse Analytics",
+      "Snowflake",
+      "Databricks",
+      "Azure Data Factory",
+      "AWS Glue",
+      "SSIS (SQL Server Integration Services)",
+      "Apache Spark",
+      "Star / snowflake schema design",
+      "Slowly-changing dimensions, fact / dim modeling",
+      "Change-data-capture pipelines"
+    ],
+    "Cloud — Microsoft Azure": [
+      "App Service",
+      "Azure Functions",
+      "Azure SQL",
+      "Cosmos DB",
+      "Service Bus",
+      "AKS",
+      "Container Apps",
+      "Application Insights",
+      "API Management",
+      "Key Vault",
+      "Storage / Blob",
+      "Entra ID (Azure AD)"
+    ],
+    "Cloud — AWS": [
+      "EC2",
+      "S3",
+      "Lambda",
+      "RDS",
+      "DynamoDB",
+      "SQS / SNS",
+      "ECS / Fargate",
+      "API Gateway",
+      "CloudWatch",
+      "IAM"
+    ],
+    "DevOps & CI/CD": [
+      "Azure DevOps Pipelines",
+      "GitHub Actions",
+      "Jenkins",
+      "Octopus Deploy",
+      "Docker",
+      "Kubernetes (AKS / EKS)",
+      "Helm",
+      "Terraform",
+      "ARM / Bicep",
+      "Blue-Green & Canary releases"
+    ],
+    "Identity & Security": [
+      "OAuth 2.0",
+      "OpenID Connect (OIDC)",
+      "JWT / Bearer Tokens",
+      "IdentityServer",
+      "Azure AD / Entra ID",
+      "Okta",
+      "Role-Based Access Control",
+      "Data Protection API",
+      "OWASP Top 10"
+    ],
+    "Architecture & Patterns": [
+      "Microservices",
+      "Domain-Driven Design (DDD)",
+      "Clean Architecture",
+      "Onion / Hexagonal",
+      "CQRS + MediatR",
+      "Event-Driven",
+      "API Gateway",
+      "Saga / Outbox patterns",
+      "SOLID"
+    ],
+    "Testing & QA": [
+      "NUnit",
+      "xUnit",
+      "MSTest",
+      "Moq",
+      "NSubstitute",
+      "SpecFlow",
+      "Playwright",
+      "Selenium",
+      "Postman / Newman",
+      "BrowserStack",
+      "WCAG 2.1 / Axe"
+    ],
+    "Reporting & BI": [
+      "SQL Server Reporting Services (SSRS)",
+      "SQL Server Analysis Services (SSAS — tabular & multidimensional)",
+      "Power BI (Desktop, Service, Embedded, Report Builder)",
+      "DAX & Power Query (M)",
+      "Crystal Reports / SAP Crystal Reports",
+      "SAP BusinessObjects (Web Intelligence, Lumira)",
+      "Tableau (Desktop, Server, Prep)",
+      "QlikView",
+      "Qlik Sense",
+      "Minitab Statistical Software",
+      "Oracle BI Publisher (BIP)",
+      "Oracle Analytics Cloud (OAC)",
+      "IBM Cognos Analytics",
+      "Telerik Reporting / DevExpress XtraReports",
+      "Excel — Power Query, Power Pivot, pivot tables, advanced formulas",
+      "Ad-hoc reporting frameworks & self-service BI dashboards",
+      "ReportViewer (WinForms / WebForms)",
+      "Operational vs. analytical reporting design"
+    ],
+    "ERP & Business Systems": [
+      "SAP (ERP integration via .NET adapters)",
+      "SAP NetWeaver / IDoc / BAPI bridges",
+      "Oracle E-Business Suite",
+      "Oracle ERP Cloud",
+      "Made2Manage (Aptean) — manufacturing ERP",
+      "Aptean process ERP",
+      "SAGE (financials)",
+      "Pointman field-service ERP",
+      "Salesforce (Sales Cloud, Service Cloud, REST/Bulk APIs)",
+      "Marketo (marketing automation, REST APIs)",
+      "ServiceNow (ITSM, custom integrations)",
+      "ERP-to-.NET WCF / Web API integration patterns"
+    ],
+    "CMS & Content Platforms": [
+      "Sitecore XP / XM",
+      "Sitecore SXA & Headless (JSS)",
+      "SharePoint (On-Prem & Online)",
+      "Umbraco",
+      "Kentico Xperience",
+      "WordPress (REST API integration)",
+      "Headless CMS patterns",
+      "Content modeling & taxonomy design"
+    ],
+    "Mainframe Bridge": [
+      "COBOL",
+      "JCL",
+      "DB2",
+      "IBM Mainframe integration via .NET adapters"
+    ],
+    "Collaboration": [
+      "Azure DevOps Boards",
+      "JIRA",
+      "Rally",
+      "Confluence",
+      "GitHub",
+      "Bitbucket",
+      "ServiceNow",
+      "TFS"
+    ],
+    "AI-Augmented Development": [
+      "GitHub Copilot",
+      "ChatGPT (Expert)",
+      "Prompt engineering for code, tests, and docs"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Federal Center for Medicaid & Medicare (EPPE)",
+      "location": "Baltimore, MD",
+      "role": "Tech Lead .NET Developer / Systems Engineering",
+      "start": "2024-08",
+      "end": "present",
+      "highlights": [
+        "Leads hands-on development on the Enterprise Privacy Policy Engine (EPPE) — a high-traffic ASP.NET Core 8 portal with an Angular 18 SPA front-end supporting Medicaid privacy operations.",
+        "Implemented RBAC workflows, media-dispositioning, custom dashboards, dialog forms, and interactive workflow screens using Angular reactive forms and ASP.NET Core Web API.",
+        "Redesigned global features — PDF generation (QuestPDF), advanced search, server-side filtering, and Hangfire-scheduled DUA-policy notifications.",
+        "Oversees AWS-based deployments to EKS with Docker containers; GitHub Actions and Jenkins pipelines; tag-based releases with Helm charts.",
+        "Coordinates zero-downtime UAT and production deployments; mentors juniors and leads cross-functional teams on ASP.NET Core, Angular, and architectural best practices."
+      ],
+      "stack": ["ASP.NET Core 8", "C# 12", "Angular 18", "Entity Framework Core", "Docker", "Kubernetes (EKS)", "Jenkins", "GitHub Actions", "AWS (EC2, S3, RDS, Lambda)", "SQL Server", "REST APIs", "Jira"]
+    },
+    {
+      "company": "State of New York — Department of Corrections (NYDOCCS)",
+      "location": "Albany, NY",
+      "role": "Tech Lead .NET Developer / Systems Engineering",
+      "start": "2023-08",
+      "end": "2024-07",
+      "highlights": [
+        "Directed migration of legacy ASP.NET Web Forms portal components to ASP.NET Core 6 with Angular 16 SPAs.",
+        "Instituted unit, integration, and regression testing frameworks (xUnit + Moq + Playwright) for production-ready releases.",
+        "Enforced RBAC, OIDC-based authorization workflows, and state/federal compliance.",
+        "Owned end-to-end CI/CD on Azure DevOps and Git workflows across DEV, QA, UAT, PROD with Octopus Deploy promotion gates.",
+        "Mentored juniors on Clean Architecture, EF Core best practices, multi-environment configuration, and Angular component design."
+      ],
+      "stack": ["ASP.NET Core 6", "C# 10", "Angular 16", "Entity Framework Core", "Azure DevOps", "Octopus Deploy", "REST APIs", "Multi-tenant", "Git", "Jira", "CI/CD"]
+    },
+    {
+      "company": "State of California — County of San Bernardino (ITSD)",
+      "location": "San Bernardino, CA",
+      "role": "Tech Lead .NET Developer / Systems Engineering",
+      "start": "2022-08",
+      "end": "2023-07",
+      "highlights": [
+        "Led migration of multiple legacy portals (Register-to-Vote, eDocs, Worker Payroll, Affidavit, User Management, ROV Intranet) from classic ASP / Web Forms on NGINX to ASP.NET Core on IIS.",
+        "Reverse-engineered legacy code into .NET Core 6 and upgraded to .NET 8 LTS with minimal downtime.",
+        "Modularized monoliths into standalone services and Global API-first microservices using gRPC and REST.",
+        "Set up Azure Dev/Test/UAT/Prod environments from scratch with Azure Pipelines and CI/CD automation.",
+        "Led full Azure DevOps integration — pipeline creation, build/release config, automated NUnit + Playwright testing, deployment tracking."
+      ],
+      "stack": [".NET Core 6 → .NET 8", "C#", "ASP.NET Core MVC", "Angular 14+", "AngularJS (legacy)", "IIS", "SQL Server", "Azure DevOps", "Azure App Service", "Git"]
+    },
+    {
+      "company": "State of New York — Department of Transportation (NYDOT)",
+      "location": "Albany, NY",
+      "role": "Tech Lead .NET Developer / Systems Engineering",
+      "start": "2021-06",
+      "end": "2022-07",
+      "highlights": [
+        "Led the modernization of the Governor's legacy ASP.NET Web Forms portal (2009 build) to ASP.NET Core 6 with Razor Pages + Angular 12.",
+        "Major contributor to the Universal Navigation (UNAV) project — a reusable Angular component library deployed across ~8,000 sub-applications including DOT, DMV, and CSEA.",
+        "Implemented multi-language localization with .NET resource files and Angular i18n for accessibility and localization compliance.",
+        "Managed DEV → QA → UAT → PROD promotion with Azure Pipelines, rollback planning, and post-deployment validation.",
+        "Mentored a team of 12 .NET developers on ASP.NET Core, EF Core, and Angular workflows; ensured WCAG 2.1 compliance."
+      ],
+      "stack": ["ASP.NET Core 6", "ASP.NET Web Forms (legacy)", "Angular 12", "Entity Framework Core", "Azure App Service", "Azure DevOps", "REST APIs", "SQL Server", "Git", "Jira", "WCAG 2.1"]
+    },
+    {
+      "company": "Moody's Financial",
+      "location": "Manhattan, NY",
+      "role": "Tech Lead .NET Developer / Solutions Architect",
+      "start": "2020-06",
+      "end": "2021-05",
+      "highlights": [
+        "Architected enterprise ASP.NET Core 5/6 microservices with custom modules, RESTful Web APIs, gRPC services, and third-party integrations.",
+        "Containerized .NET Core 5 → 6 services with Docker; orchestrated on AKS; messaging on RabbitMQ + Kafka.",
+        "Acted as Release Manager — end-to-end release cycles across DEV, QA, UAT, PROD; CAB approvals, rollback playbooks.",
+        "Designed Angular 11 SPAs and Blazor Server dashboards for CFO stakeholders backed by GraphQL and Web API endpoints.",
+        "Led performance work that reduced API response time ~25% via SQL partitioning, output caching, and Redis-backed query caching.",
+        "Served as Accessibility SME ensuring ADA and WCAG 2.1 compliance across web apps, generated PDFs, and Office documents."
+      ],
+      "stack": ["ASP.NET Core 5 → 6", "C# 9 / 10", "Angular 11", "Blazor Server", "Entity Framework Core", "RabbitMQ", "Kafka", "MongoDB", "SQL Server", "Docker", "AKS", "AWS", "Okta"]
+    },
+    {
+      "company": "CALTRANS (State of California Dept of Transportation)",
+      "location": "California",
+      "role": "Lead .NET Developer / Enterprise Architect",
+      "start": "2019-11",
+      "end": "2020-06",
+      "highlights": [
+        "Hands-on lead across ASP.NET Core 3.1 / 5 and ASP.NET MVC 5 portals for public-facing and internal government applications.",
+        "Owned full SDLC — requirements, architecture, development, testing (NUnit + Selenium), deployment, and production support.",
+        "Created AS-IS and TO-BE technical documentation, architecture diagrams, ERDs, business workflows, and gap analyses.",
+        "Performed ADA/WCAG 2.0 & 2.1 remediation on Angular 9 + Razor pages; Sev-1 production support for mission-critical government portals.",
+        "Built Angular 9 and React UI components integrated with .NET Web API + GraphQL backends."
+      ],
+      "stack": ["ASP.NET Core 3.1 / 5", "ASP.NET MVC 5", "C#", "Angular 9", "AngularJS", "React", "GraphQL", "SQL Server", "Jenkins", "Azure DevOps", "AWS"]
+    },
+    {
+      "company": "Vyaire Medical",
+      "location": "Palm Springs, CA",
+      "role": "Project Lead .NET Developer / Web Applications Support Engineer",
+      "start": "2018-11",
+      "end": "2019-11",
+      "highlights": [
+        "Supported a portfolio of ASP.NET Core, ASP.NET MVC, and ASP.NET Web Forms portals with decoupled Angular 7–11 front-ends.",
+        "Owned P1–P4 incident management and SLA communications; vendor coordination across AWS, Azure, and Aptean ERP.",
+        "Delivered ERP integrations (Pointman, Made2Manage, SAP, SAGE) using .NET WCF/Web API services with Crystal Reports, Power BI, and Tableau reporting.",
+        "Championed ADA/WCAG compliance; audited and remediated ASP.NET Razor views, PDFs, forms, and multimedia."
+      ],
+      "stack": ["ASP.NET Core", "ASP.NET MVC", "C#", "Angular 7–11", "AngularJS", "Entity Framework", "WCF", "Web API", "RabbitMQ", "AWS SQS", "SQL Server 2016", "Docker", "Jenkins", "Salesforce", "Marketo"]
+    },
+    {
+      "company": "Fluke Corporation",
+      "location": "Everett, WA",
+      "role": "Project Lead .NET Developer / Web Architect",
+      "start": "2018-06",
+      "end": "2018-11",
+      "highlights": [
+        "Led ASP.NET MVC 4 → 5 → ASP.NET Core upgrades, content migration, library refactoring, and security patching.",
+        "Built custom responsive React + AngularJS frontends consumed by a .NET Web API back-end.",
+        "Managed a 35-member onsite/offshore cross-functional team including Salesforce, Marketo, .NET, and front-end specialists across China, Japan, and Europe.",
+        "Championed ADA/WCAG 2.1; delivered accessibility training to 50+ developers and content editors — 100% compliance for new content."
+      ],
+      "stack": ["ASP.NET MVC 5", "ASP.NET Core", "C#", "AngularJS", "React", "Entity Framework", "WCF", "AWS (EC2, DynamoDB, IAM)", "Azure DevOps", "Jenkins"]
+    },
+    {
+      "company": "Thomas Pharmaceuticals",
+      "location": "Manhattan, NY",
+      "role": "Lead .NET Developer / Project Manager",
+      "start": "2015-01",
+      "end": "2018-06",
+      "highlights": [
+        "Mentored, coached, and set direction for .NET developers and project managers/analysts across multiple delivery streams.",
+        "Designed UI components for multiple internal and customer-facing apps using AngularJS, jQuery, Razor, and ASP.NET MVC 4 + WCF.",
+        "Performance-tuned Kafka and MongoDB workloads — adjusted query patterns and configurations to enhance .NET service throughput.",
+        "Played a pivotal role in migrating .NET infrastructure to Microsoft Azure — 20% increase in service scalability and reliability.",
+        "Led RESTful Web API development driving seamless third-party integrations and automated data exchange.",
+        "Created reusable WCF contracts, used SSIS for ETL, and built dashboards in Crystal Reports and Power BI."
+      ],
+      "stack": ["ASP.NET MVC 4", "C#", ".NET 4.0 / 4.5", "AngularJS", "WCF", "Web API", "Entity Framework", "WinForms", "Kafka", "MongoDB", "SQL Server", "SSIS", "Azure", "Crystal Reports"]
+    },
+    {
+      "company": "IBM Invesco",
+      "location": "Hyderabad, India",
+      "role": "Sr .NET Developer / Software Engineer",
+      "start": "2014-01",
+      "end": "2014-12",
+      "highlights": [
+        "Built RESTful Web API services using ASP.NET Core 3.1 with Swagger documentation.",
+        "Created internal application UIs with ASP.NET Core Razor Views, AngularJS, and jQuery on a Blueprint CSS foundation.",
+        "Used LINQ and Entity Framework Core (Database-First) to implement N-Tier architecture.",
+        "Authored unit tests with NUnit and NSubstitute — 90% code coverage was a per-application requirement and was consistently met without gaps.",
+        "Used TFS for version control and Agile delivery — daily standups, story breakdown, sprint planning."
+      ],
+      "stack": ["ASP.NET Core 3.1", "ASP.NET MVC", "C#", "AngularJS", "Entity Framework Core", "LINQ", "Web API", "Swagger", "NUnit", "NSubstitute", "TFS"]
+    },
+    {
+      "company": "Hyderabad Indoors (Apex Infratech)",
+      "location": "Hyderabad, India",
+      "role": "Jr .NET Developer",
+      "start": "2012-05",
+      "end": "2013-12",
+      "highlights": [
+        "Developed and supported multi-tier ASP.NET and ASP.NET MVC web applications in C#.",
+        "Implemented WCF service contracts and security via the System.ServiceModel pipeline.",
+        "Designed normalized database schemas with config-driven UI rendering tables.",
+        "Used Forms Authentication and role-based authorization for fine-grained access control.",
+        "Built RESTful services with Web API, secured endpoints with OAuth bearer tokens (JWT).",
+        "Created reusable Angular components with shared HTTP interceptors for token attachment."
+      ],
+      "stack": ["ASP.NET MVC", "C#", "WCF", "Web API", "Entity Framework", "AngularJS", "Dapper", "SQL Server", "JWT / OAuth", "TFS"]
+    }
+  ],
+  "education": [
+    {
+      "school": "Westcliff University",
+      "location": "Irvine, CA",
+      "degree": "Doctorate — Business Administration Management and Entrepreneurship",
+      "start": "2020-09",
+      "end": "2021-10",
+      "notes": "Completed four semesters with a GPA of 3.8 before voluntarily discontinuing the program. Completed Doctoral Coursework (27 Credit Hours)."
+    },
+    {
+      "school": "Harrisburg University",
+      "location": "Harrisburg, PA",
+      "degree": "Masters — Information System Engineering and Management",
+      "end": "2017",
+      "notes": "Graduated with High Honours — GPA 3.86 / 4.00."
+    },
+    {
+      "school": "Pulla Reddy Engineering College",
+      "location": "Hyderabad, India",
+      "degree": "Bachelor of Science — Civil Engineering",
+      "start": "2008",
+      "end": "2012",
+      "notes": "Graduated with Highest Distinction. Recipient of Merit Medal for Academic Excellence."
+    }
+  ],
+  "certifications": [
+    { "name": "Microsoft Certified: Azure Administrator Associate", "id": "AZ-104", "issuer": "Microsoft" },
+    { "name": "Microsoft Certified: Azure Developer Associate", "id": "AZ-204", "issuer": "Microsoft" },
+    { "name": "Microsoft Certified: DevOps Engineer Expert", "id": "AZ-400", "issuer": "Microsoft" },
+    { "name": "Microsoft Certified: Azure Solutions Architect Expert", "id": "AZ-305", "issuer": "Microsoft" },
+    { "name": "PMP — Project Management Professional", "id": "PMP", "issuer": "PMI" }
+  ],
+  "interests": [
+    "Volunteer work supporting community initiatives and non-profit organizations",
+    "Culinary arts — experimenting with recipes and exploring new cuisines"
+  ]
+}
