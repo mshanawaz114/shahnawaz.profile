@@ -32,7 +32,11 @@ public class GroqChatService : IGroqChatService
 
         var payload = new GroqCompletionRequest
         {
-            Model = _config["Groq:Model"] ?? "llama-3.3-70b-versatile",
+            // Default to llama-3.1-8b-instant: same Llama family as 3.3-70b but with a much
+            // higher TPM ceiling on Groq's free tier. The résumé Q&A use case is small-context
+            // factual lookup — the 8B model handles it cleanly without burning rate-limit budget.
+            // Override via the Groq:Model setting (appsettings/local.settings/SWA app setting).
+            Model = _config["Groq:Model"] ?? "llama-3.1-8b-instant",
             Temperature = double.TryParse(_config["Groq:Temperature"], out var t) ? t : 0.4,
             MaxTokens = int.TryParse(_config["Groq:MaxTokens"], out var m) ? m : 800,
             Messages = messages.ToList()
