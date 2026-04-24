@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  // Local dev: ASP.NET Core Kestrel (default) runs on http://localhost:5000 over HTTP
-  // or https://localhost:5001. Override to match `dotnet run` output if needed.
-  apiBase: 'http://localhost:5000'
+  // Local dev: Azure Functions Core Tools (`func start` from /api) runs on http://localhost:7071.
+  // In production this is empty so calls go to /api/* against the SWA origin (same-origin).
+  apiBase: 'http://localhost:7071'
 };

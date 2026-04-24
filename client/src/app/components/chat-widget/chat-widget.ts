@@ -96,7 +96,7 @@ export class ChatWidgetComponent {
         const serverMsg = err?.error?.error ?? err?.message ?? 'unknown error';
         let display: string;
         if (status === 0) {
-          display = 'Cannot reach the chat API. Confirm the .NET backend is running on http://localhost:5000.';
+          display = 'Cannot reach the chat API. Confirm the Functions host is running on http://localhost:7071 (cd api && func start).';
         } else if (status === 500) {
           display = `Server error: ${serverMsg}. Check the API terminal — most likely GROQ_API_KEY is not set or the configured model is invalid.`;
         } else if (status === 502) {
